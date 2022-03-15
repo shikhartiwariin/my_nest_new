@@ -1,5 +1,22 @@
 import 'package:flutter/material.dart';
 
+class MyNest extends StatelessWidget {
+  const MyNest({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'My Nest',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const ResidentRegistration(title: 'Resident Registration'),
+    );
+  }
+}
+
 class ResidentRegistration extends StatefulWidget {
   const ResidentRegistration({Key? key, required this.title}) : super(key: key);
 
@@ -11,9 +28,7 @@ class ResidentRegistration extends StatefulWidget {
 
 class _ResidentRegistrationState extends State<ResidentRegistration> {
   void _register() {
-    setState(() {
-     
-    });
+    setState(() {});
   }
 
   @override
