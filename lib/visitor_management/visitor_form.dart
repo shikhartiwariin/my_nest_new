@@ -5,7 +5,7 @@ class VisitorForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'MyNest';
+    const appTitle = 'Visitor Registration';
 
     return MaterialApp(
       title: appTitle,
@@ -99,8 +99,8 @@ class VisFormState extends State<VisForm> {
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.person),
-                  hintText: 'Please enter your name',
-                  labelText: 'Name *',
+                  hintText: 'Upload Photograph',
+                  labelText: 'Photo *',
                 ),
                 onSaved: (String? value) {},
                 validator: (value) {
