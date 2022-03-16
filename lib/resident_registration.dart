@@ -1,103 +1,221 @@
 import 'package:flutter/material.dart';
 
-class MyNest extends StatelessWidget {
-  const MyNest({Key? key}) : super(key: key);
+class RegidentRegForm extends StatelessWidget {
+  const RegidentRegForm({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    const appTitle = 'Resident Registration';
+
     return MaterialApp(
+      title: appTitle,
       debugShowCheckedModeBanner: false,
-      title: 'My Nest',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(appTitle),
+        ),
+        body: const VisForm(),
       ),
-      home: const ResidentRegistration(title: 'Resident Registration'),
     );
   }
 }
 
-class ResidentRegistration extends StatefulWidget {
-  const ResidentRegistration({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class ResidentForm extends StatefulWidget {
+  const ResidentForm({Key? key}) : super(key: key);
 
   @override
-  State<ResidentRegistration> createState() => _ResidentRegistrationState();
+  ResidentFormState createState() {
+    return ResidentFormState();
+  }
 }
 
-class _ResidentRegistrationState extends State<ResidentRegistration> {
-  void _register() {
-    setState(() {});
-  }
+class ResidentFormState extends State<ResidentForm> {
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Resident_ID:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'First Name:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'Last Name:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'IsPrimary:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'IsPrimary:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'Primary member ID:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'Email ID:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'Mobile1:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'Mobile2:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'Aadhar Number:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'Address:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text(
-              'Remarks:',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _register,
-        tooltip: 'Resident Registration',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    var _site;
+    return ListView(
+      children: <Widget>[
+        Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.add_card),
+                  hintText: 'Auto Generated',
+                  labelText: 'Resident ID *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  hintText: 'Please enter your first name',
+                  labelText: 'First Name *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  hintText: 'Please enter your last name',
+                  labelText: 'Last Name *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.question_answer),
+                  hintText: 'Yes / No',
+                  labelText: 'Is Primary *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.perm_identity),
+                  hintText: 'If resident is not primary',
+                  labelText: 'Primary Member ID *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.email),
+                  hintText: 'Please enter email ID',
+                  labelText: 'Email ID *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.mobile_friendly),
+                  hintText: 'Enter mobile number',
+                  labelText: 'Mobile No#1 *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.mobile_friendly),
+                  hintText: 'Alternate mobile number',
+                  labelText: 'Mobile No#2 *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.web_asset),
+                  hintText: 'Please enter your aadhar number',
+                  labelText: 'Aadhar Number *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.home),
+                  hintText: 'Please enter your addres',
+                  labelText: 'Address *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.comment),
+                  hintText: 'Please enter property name',
+                  labelText: 'Remarks *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 144, top: 24),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Processing Data')),
+                        );
+                      }
+                    },
+                    child: const Text('Submit'),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
     );
   }
 }
