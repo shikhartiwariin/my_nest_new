@@ -31,8 +31,10 @@ class VisForm extends StatefulWidget {
 
 class VisFormState extends State<VisForm> {
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
+    var _site;
     return ListView(
       children: <Widget>[
         Form(
@@ -42,9 +44,23 @@ class VisFormState extends State<VisForm> {
             children: [
               TextFormField(
                 decoration: const InputDecoration(
+                  icon: Icon(Icons.add_card),
+                  hintText: 'Auto Generated',
+                  labelText: 'Resident ID *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
                   icon: Icon(Icons.person),
-                  hintText: 'Please enter your name',
-                  labelText: 'Name *',
+                  hintText: 'Please enter your first name',
+                  labelText: 'First Name *',
                 ),
                 onSaved: (String? value) {},
                 validator: (value) {
@@ -56,9 +72,9 @@ class VisFormState extends State<VisForm> {
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  icon: Icon(Icons.call),
-                  hintText: 'Please enter your mobile number',
-                  labelText: 'Mobile Number *',
+                  icon: Icon(Icons.person),
+                  hintText: 'Please enter your last name',
+                  labelText: 'Last Name *',
                 ),
                 onSaved: (String? value) {},
                 validator: (value) {
@@ -70,9 +86,9 @@ class VisFormState extends State<VisForm> {
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  icon: Icon(Icons.analytics),
-                  hintText: 'Please enter your ID Card Number',
-                  labelText: 'ID Card Number *',
+                  icon: Icon(Icons.question_answer),
+                  hintText: 'Yes / No',
+                  labelText: 'Is Primary *',
                 ),
                 onSaved: (String? value) {},
                 validator: (value) {
@@ -84,23 +100,93 @@ class VisFormState extends State<VisForm> {
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  icon: Icon(Icons.account_balance_rounded),
+                  icon: Icon(Icons.perm_identity),
+                  hintText: 'If resident is not primary',
+                  labelText: 'Primary Member ID *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.email),
+                  hintText: 'Please enter email ID',
+                  labelText: 'Email ID *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.mobile_friendly),
+                  hintText: 'Enter mobile number',
+                  labelText: 'Mobile No#1 *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.mobile_friendly),
+                  hintText: 'Alternate mobile number',
+                  labelText: 'Mobile No#2 *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.web_asset),
+                  hintText: 'Please enter your aadhar number',
+                  labelText: 'Aadhar Number *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.home),
+                  hintText: 'Please enter your addres',
+                  labelText: 'Address *',
+                ),
+                onSaved: (String? value) {},
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.comment),
                   hintText: 'Please enter property name',
-                  labelText: 'Property Name *',
-                ),
-                onSaved: (String? value) {},
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.person),
-                  hintText: 'Upload Photograph',
-                  labelText: 'Photo *',
+                  labelText: 'Remarks *',
                 ),
                 onSaved: (String? value) {},
                 validator: (value) {
