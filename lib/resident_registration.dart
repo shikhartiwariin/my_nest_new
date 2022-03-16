@@ -14,7 +14,7 @@ class RegidentRegForm extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        body: const VisForm(),
+        body: const ResidentForm(),
       ),
     );
   }
@@ -34,7 +34,6 @@ class ResidentFormState extends State<ResidentForm> {
 
   @override
   Widget build(BuildContext context) {
-    var _site;
     return ListView(
       children: <Widget>[
         Form(
