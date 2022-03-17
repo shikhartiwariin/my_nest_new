@@ -14,7 +14,15 @@ class RegidentRegForm extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        body: const ResidentForm(),
+        body: Center(
+          child: Container(
+            width: 400,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 48, left: 48),
+              child: Center(child: const ResidentForm()),
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -41,33 +49,44 @@ class ResidentFormState extends State<ResidentForm> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextFormField(
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.add_card),
-                  hintText: 'Auto Generated',
-                  labelText: 'Resident ID *',
-                ),
-                onSaved: (String? value) {},
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.person),
-                  hintText: 'Please enter your first name',
-                  labelText: 'First Name *',
-                ),
-                onSaved: (String? value) {},
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
+              Row(
+                children: [
+                  Flexible(
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.add_card),
+                        hintText: 'Auto Generated',
+                        labelText: 'Resident ID *',
+                      ),
+                      onSaved: (String? value) {},
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  Flexible(
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.person),
+                        hintText: 'Please enter your first name',
+                        labelText: 'First Name *',
+                      ),
+                      onSaved: (String? value) {},
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                ],
               ),
               TextFormField(
                 decoration: const InputDecoration(
