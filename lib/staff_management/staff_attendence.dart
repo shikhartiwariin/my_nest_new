@@ -76,7 +76,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               }),
               cells: <DataCell>[
                 DataCell(
-                  Text('Absent'),
+                  Text('Absent $index'),
                 ),
                 DataCell(
                   Text('Staff ID $index'),
